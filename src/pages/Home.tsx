@@ -1,5 +1,4 @@
 import { Button } from "../components/ui/button";
-//import banner from '../...@/assets/images/banner'
 import banner from '@/assets/images/banner.png'
 import hero from '@/assets/images/hero.png'
 import { Link } from "react-router-dom";
@@ -27,6 +26,10 @@ const Home = () => {
           <img src={banner} alt="" />
         </div>
       </div>
+
+
+
+      
       <div className="mb-96">
         <div>
           <img className="mx-auto" src={hero} alt="" />

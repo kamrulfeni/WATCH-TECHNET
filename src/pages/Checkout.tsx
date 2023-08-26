@@ -1,11 +1,29 @@
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Switch } from "../components/ui/switch";
-import { Textarea } from "../components/ui/textarea";
+//import { Button } from '@/components/ui/button';
+import { DatePickerWithPresets } from '../components/ui/datePickerWithPreset';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group';
+import { Switch } from '../components/ui/switch';
+import { Textarea } from '../components/ui/textarea';
+//import { useAppSelector } from '@/redux/hook';
+//import { IProduct } from '@/types/globalTypes';
 
+import { useState } from 'react';
+import { Button } from '../components/ui/button';
+import { useAppSelector } from '../redux/hook';
 
-const Checkout = () => {
-    return (
+export default function Checkout() {
+  const [scheduled, setScheduled] = useState<boolean>(false);
+
+  const { products } = useAppSelector((state)=> state.cart)
+
+  //! Dummy Data
+
+  //  const products: IProduct[] = [];
+
+  //! **
+
+  return (
     <div className="flex justify-center items-center h-[calc(100vh-80px)] gap-10 text-primary">
       <div className="max-w-3xl w-full">
         <h1 className="mb-2">Delivery Information</h1>
@@ -126,6 +144,4 @@ const Checkout = () => {
       </div>
     </div>
   );
-};
-
-export default Checkout;
+}
